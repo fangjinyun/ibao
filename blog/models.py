@@ -21,8 +21,8 @@ class Post(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey('blog.Post', related_name='comments')
-    author = models.CharField(max_length=200)
-    text = models.TextField()
+    author = models.CharField('昵称', max_length=200)
+    text = models.TextField('内容')
     created_date = models.DateTimeField(auto_now_add=True)
     approved_comment = models.BooleanField(default=False)
 
