@@ -1,3 +1,19 @@
 .post-form textarea, .post-form input {
     width: 100%;
 }
+
+h1, h1 a, h2, h2 a, h3, h4 {
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    font-size: 24pt;
+}
+
+h4 a {
+	font-family: 'Baloo Bhaina', cursive;
+	color: #000000;
+	font-size: 36pt;
+}
+
+.info {
+	color: #999999;
+}
