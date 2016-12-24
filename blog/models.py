@@ -8,6 +8,8 @@ class Post(models.Model):
     text = models.TextField('正文')
     created_date = models.DateTimeField('创建时间', auto_now_add=True)
     published_date = models.DateTimeField('发布日期', blank=True, null=True)
+    category = models.ForeignKey('Category', verbose_name='分类', blank=True, null=True)
+    tags = models.ManyToManyField('Tag', verbose_name='标签', blank=True,)
 
     def publish(self):
         self.published_date = timezone.now()
@@ -32,3 +34,15 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+
+class Category(models.Model):
+    name = models.CharField('name',max_length=16)
+
+    def __str__(self):
+        return self.name
+
+class Tag(models.Model):
+    name = models.CharField('name',max_length=16)
+
+    def __str__(self):
+        return self.name
